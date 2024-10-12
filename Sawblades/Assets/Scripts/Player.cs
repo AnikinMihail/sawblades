@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Transform playerVisual;
+    
     [SerializeField] private float moveSpeed = 4f;
     [SerializeField] private float jumpSpeed = 8f;
 
@@ -12,6 +14,7 @@ public class Player : MonoBehaviour
     private bool _doubleJump;
 
     private float _horizontalInput;
+    private float _yRotation;
 
     private void Start()
     {
@@ -21,6 +24,17 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        if (_horizontalInput == -1)
+        {
+            _yRotation = 180f;
+        } else if (_horizontalInput == 1)
+        {
+            _yRotation = 0.0f;
+        }
+        
+        Quaternion target = Quaternion.Euler(0, _yRotation, 0);
+        playerVisual.rotation = Quaternion.Slerp(playerVisual.rotation, target, Time.deltaTime * 10f); 
 
         _rb.velocity = new Vector2(_horizontalInput * moveSpeed, _rb.velocity.y);
 
