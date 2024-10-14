@@ -1,12 +1,23 @@
 using System;
 using UnityEngine;
 
+public enum Layer
+{
+    Default,
+    TransparentFX,
+    IgnoreRaycast,
+    Ground,
+    Water,
+    UI,
+    Sawblades
+}
+
 public class Player : MonoBehaviour
 {
     [SerializeField] private Transform playerVisual;
     
     [SerializeField] private float moveSpeed = 4f;
-    [SerializeField] private float jumpSpeed = 8f;
+    [SerializeField] private float jumpSpeed = 10f;
 
     private Rigidbody2D _rb;
     
@@ -15,6 +26,8 @@ public class Player : MonoBehaviour
 
     private float _horizontalInput;
     private float _yRotation;
+
+    private readonly LayerMask _layerMask = 1 << 10;
 
     private void Start()
     {
@@ -25,14 +38,14 @@ public class Player : MonoBehaviour
     {
         _horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        if (_horizontalInput == -1)
+
+        _yRotation = _horizontalInput switch
         {
-            _yRotation = 180f;
-        } else if (_horizontalInput == 1)
-        {
-            _yRotation = 0.0f;
-        }
-        
+            -1f => 180f,
+            1f => 0.0f,
+            _ => _yRotation
+        };
+
         Quaternion target = Quaternion.Euler(0, _yRotation, 0);
         playerVisual.rotation = Quaternion.Slerp(playerVisual.rotation, target, Time.deltaTime * 10f); 
 
@@ -60,9 +73,29 @@ public class Player : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        Vector2 raycastOrigin = transform.position - new Vector3(0, .6f, 0);
+        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, -Vector2.up, 5f);
+
+        while (hit.collider)
+        {
+            if (hit.transform.TryGetComponent(out Sawblade sawblade))
+            {
+                sawblade.OnJumpedOver();
+                raycastOrigin = sawblade.transform.position - new Vector3(0, .6f, 0);
+                hit = Physics2D.Raycast(raycastOrigin, -Vector2.up, 5f);
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer == 3)
+        if (other.gameObject.layer == (int)Layer.Ground)
         {
             _isGrounded = true;
         }
@@ -70,7 +103,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.layer == 3)
+        if (other.gameObject.layer == (int)Layer.Ground)
         {
             _isGrounded = false;
         }
