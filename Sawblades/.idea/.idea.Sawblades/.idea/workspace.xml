@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d94f1ec7-14d6-450e-9955-e3016832ea8e" name="Changes" comment="" />
+    <list default="true" id="d94f1ec7-14d6-450e-9955-e3016832ea8e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sawblades/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sawblades/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/player_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/player_idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/StandartPlayerVisualBody.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/StandartPlayerVisualBody.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/StandartPlayerVisualHead.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/StandartPlayerVisualHead.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/StandartPlayerVisualLegs.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/StandartPlayerVisualLegs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d753e6e9c9654d14b7d1db41628a4fcd20a00/e6/2a6778e3/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -24,7 +37,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -80,7 +93,12 @@
       <option name="presentableId" value="Default" />
       <updated>1728672247428</updated>
       <workItem from="1728672248832" duration="3450000" />
-      <workItem from="1728724224816" duration="3290000" />
+      <workItem from="1728724224816" duration="3891000" />
+      <workItem from="1728756470329" duration="1644000" />
+      <workItem from="1728903674641" duration="476000" />
+      <workItem from="1728905476790" duration="4485000" />
+      <workItem from="1728913456973" duration="4015000" />
+      <workItem from="1728934670284" duration="981000" />
     </task>
     <servers />
   </component>
