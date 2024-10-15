@@ -6,7 +6,8 @@ using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject spawnable; //!!! Must have a RigidBody2D !!!
+    [SerializeField] private GameObject spawnable; //!!! Must have a RigidBody2D !!!    
+    
     [SerializeField] private float minTimeInterval = 2f;
     [SerializeField] private float maxTimeInterval = 2.5f;
     private void Start()
