@@ -1,19 +1,12 @@
 using System;
 using UnityEngine;
 
-public enum Layer
-{
-    Default,
-    TransparentFX,
-    IgnoreRaycast,
-    Ground,
-    Water,
-    UI,
-    Sawblades
-}
+
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
+    
     [SerializeField] private Transform playerVisual;
     
     [SerializeField] private float moveSpeed = 4f;
@@ -28,6 +21,27 @@ public class Player : MonoBehaviour
     private float _yRotation;
 
     private readonly LayerMask _layerMask = 1 << 10;
+    
+    public enum Layer
+    {
+        Default,
+        TransparentFX,
+        IgnoreRaycast,
+        Ground,
+        Water,
+        UI,
+        Sawblades,
+        SawbladeCollidable,
+        Walls,
+        Player
+    }
+    
+    public int score;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
