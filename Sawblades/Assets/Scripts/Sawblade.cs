@@ -12,11 +12,12 @@ public class Sawblade : MonoBehaviour
     private bool _isSelected;
     
     
+    
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _player = FindObjectOfType<Player>();
+        _player = Player.instance;
     }
 
 
@@ -31,6 +32,7 @@ public class Sawblade : MonoBehaviour
 
         if (_player.transform.position.y < -4f && _isSelected)
         {
+            ScoreManager.instance.AddPoint();
             Destroy(gameObject);
         } 
     }
@@ -43,7 +45,6 @@ public class Sawblade : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.collider.name);
         if (other.gameObject.layer == (int)Player.Layer.Player)
         {   
 #if UNITY_EDITOR

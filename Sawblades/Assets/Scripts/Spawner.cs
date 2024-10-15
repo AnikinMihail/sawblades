@@ -20,17 +20,17 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             
-            if (Time.time < 5f)
+            if (Time.time < 10f)
             {
-                minTimeInterval = 4f;
-                maxTimeInterval = 5f;
-            }else if (Time.time < 10f)
+                minTimeInterval = 5f;
+                maxTimeInterval = 6f;
+            }else if (Time.time < 20f)
             {
                 minTimeInterval = 2f;
                 maxTimeInterval = 4f;
-            }else if (Time.time < 10f)
+            }else if (Time.time < 30f)
             {
-                minTimeInterval = 0.4f;
+                minTimeInterval = 0.5f;
                 maxTimeInterval = 2.5f;
             }
             

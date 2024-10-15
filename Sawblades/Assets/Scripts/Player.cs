@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
+    
     [SerializeField] private Transform playerVisual;
     
     [SerializeField] private float moveSpeed = 4f;
@@ -32,6 +34,13 @@ public class Player : MonoBehaviour
         SawbladeCollidable,
         Walls,
         Player
+    }
+    
+    public int score;
+
+    private void Awake()
+    {
+        instance = this;
     }
 
     private void Start()
