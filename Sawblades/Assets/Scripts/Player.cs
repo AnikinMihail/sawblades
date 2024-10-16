@@ -90,21 +90,19 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 raycastOrigin = transform.position - new Vector3(0, .6f, 0);
-        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, -Vector2.up, 5f);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(raycastOrigin, -Vector2.up);
 
-        while (hit.collider)
+        foreach (RaycastHit2D hit in hits)
         {
-            if (hit.transform.TryGetComponent(out Sawblade sawblade))
+            if (hit.collider)
             {
-                sawblade.OnJumpedOver();
-                raycastOrigin = sawblade.transform.position - new Vector3(0, .6f, 0);
-                hit = Physics2D.Raycast(raycastOrigin, -Vector2.up, 5f);
-            }
-            else
-            {
-                break;
+                if (hit.transform.TryGetComponent(out Sawblade sawblade))
+                {
+                    sawblade.OnJumpedOver();
+                }
             }
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
