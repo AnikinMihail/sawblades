@@ -33,8 +33,10 @@ public class Spawner : MonoBehaviour
                 minTimeInterval = 0.5f;
                 maxTimeInterval = 2.5f;
             }
+
+            int randomRange = Random.Range(-2, 2);
             
-            Vector2 randomSpawnPosition = new Vector2(Random.Range(-2, 2), 6);
+            Vector2 randomSpawnPosition = new Vector2(randomRange, 6);
 
             GameObject spawnableInstance = Instantiate(spawnable, randomSpawnPosition, Quaternion.identity);
 
@@ -43,7 +45,7 @@ public class Spawner : MonoBehaviour
             if (Random.Range(-3, 10) < 0)
             {
                 
-                randomSpawnPosition = new Vector2(Random.Range(-2, 2), 6);
+                randomSpawnPosition = new Vector2(Random.Range(Math.Abs(randomRange)-2, Math.Abs(randomRange)-1), 6);
 
                 spawnableInstance = Instantiate(spawnable, randomSpawnPosition, Quaternion.identity);
 
