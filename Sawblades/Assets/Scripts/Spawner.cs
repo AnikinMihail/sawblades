@@ -20,11 +20,11 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             
-            if (Time.time < 10f)
+            if (Time.time < 6f)
             {
-                minTimeInterval = 5f;
+                minTimeInterval = 4f;
                 maxTimeInterval = 6f;
-            }else if (Time.time < 20f)
+            }else if (Time.time < 12f)
             {
                 minTimeInterval = 2f;
                 maxTimeInterval = 4f;
@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
                 spawnableInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.value < 0.5 ? 3 : -3, -3);
 
             }
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(Random.value * (maxTimeInterval - minTimeInterval) + minTimeInterval);
         }
     }
 }

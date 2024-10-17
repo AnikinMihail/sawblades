@@ -6,10 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d94f1ec7-14d6-450e-9955-e3016832ea8e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sawblades/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sawblades/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sawblade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sawblade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/player_idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/player_idle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/bg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/bg.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sawblade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sawblade.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d753e6e9c9654d14b7d1db41628a4fcd20a00/e6/2a6778e3/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Shaders/2D/Sprite-Lit-Default.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -100,7 +106,10 @@
       <workItem from="1728985209562" duration="2453000" />
       <workItem from="1729019715811" duration="2193000" />
       <workItem from="1729022075664" duration="603000" />
-      <workItem from="1729072023728" duration="2064000" />
+      <workItem from="1729072023728" duration="2339000" />
+      <workItem from="1729078348777" duration="1920000" />
+      <workItem from="1729088144991" duration="1314000" />
+      <workItem from="1729196943010" duration="4795000" />
     </task>
     <servers />
   </component>

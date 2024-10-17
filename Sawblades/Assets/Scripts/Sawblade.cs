@@ -17,7 +17,7 @@ public class Sawblade : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _player = Player.instance;
+        _player = Player.Instance;
     }
 
 
