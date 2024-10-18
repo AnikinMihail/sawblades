@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sawblade : MonoBehaviour
 {
     [SerializeField] private Transform disabled;
+    [SerializeField] private ParticleSystem dust;
 
     private Rigidbody2D _rigidbody;
     private Player _player;
@@ -17,7 +18,7 @@ public class Sawblade : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _player = Player.instance;
+        _player = Player.Instance;
     }
 
 
@@ -45,6 +46,7 @@ public class Sawblade : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        dust.Play();
         if (other.gameObject.layer == (int)Player.Layer.Player)
         {   
 #if UNITY_EDITOR
