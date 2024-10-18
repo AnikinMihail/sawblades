@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabled: {fileID: 1411235881486621078}
   dust: {fileID: 6505091964710924796}
+  coin: {fileID: 1406001242633318689, guid: ab196d501f70c48599842952e7e4fa33, type: 3}
 --- !u!50 &5022041324437687211
 Rigidbody2D:
   serializedVersion: 4

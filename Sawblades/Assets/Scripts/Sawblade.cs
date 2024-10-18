@@ -6,6 +6,7 @@ public class Sawblade : MonoBehaviour
 {
     [SerializeField] private Transform disabled;
     [SerializeField] private ParticleSystem dust;
+    [SerializeField] private GameObject coin;
 
     private Rigidbody2D _rigidbody;
     private Player _player;
@@ -34,6 +35,8 @@ public class Sawblade : MonoBehaviour
         if (_player.transform.position.y < -4f && _isSelected)
         {
             ScoreManager.instance.AddPoint();
+            GameObject currentCoin = Instantiate(coin, transform.position, transform.rotation);
+            currentCoin.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 3);
             Destroy(gameObject);
         } 
     }

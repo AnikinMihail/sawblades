@@ -40,7 +40,8 @@ public class Player : MonoBehaviour
         Sawblades,
         SawbladeCollidable,
         Walls,
-        Player
+        Player,
+        Coin
     }
     
     public int score;
@@ -154,6 +155,12 @@ public class Player : MonoBehaviour
             animator.SetBool(JUMPED, false);
             
             CinemachineShake.Instance.ShakeCamera(1f, .1f);
+            dust.Play();
+        }  else if (other.gameObject.layer == (int)Layer.Coin)
+        {
+            ScoreManager.instance.AddTime();
+            Destroy(other.gameObject);
+            CinemachineShake.Instance.ShakeCamera(.1f, .1f);
             dust.Play();
         }   
     }
