@@ -523,7 +523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 460}
   m_SizeDelta: {x: 1000, y: 85.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &297964448
@@ -984,7 +984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672504956}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SceneBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1147,7 +1147,7 @@ GameObject:
   - component: {fileID: 711727846}
   - component: {fileID: 711727845}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: GameBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2047,6 +2047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1597660690}
   - component: {fileID: 1597660691}
+  - component: {fileID: 1597660694}
   - component: {fileID: 1597660689}
   - component: {fileID: 1597660688}
   - component: {fileID: 1597660692}
@@ -2162,6 +2163,7 @@ MonoBehaviour:
   playerVisual: {fileID: 1436675453}
   animator: {fileID: 1597660692}
   dust: {fileID: 889527560}
+  ghost: {fileID: 1597660694}
   moveSpeed: 4
   jumpSpeed: 10
   score: 0
@@ -2299,6 +2301,22 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1597660694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597660687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679b53fbdbfbb44bbb403c4c83a707c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  makeGhost: 0
+  ghost: {fileID: 9034836494028279542, guid: a40e18a9584bd4fa796f05f59feecd05, type: 3}
+  visualObject: {fileID: 2120749628}
+  ghostDelay: 0.1
 --- !u!1 &1652100257
 GameObject:
   m_ObjectHideFlags: 0

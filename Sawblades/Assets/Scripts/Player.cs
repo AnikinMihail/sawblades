@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform playerVisual;
     [SerializeField] private Animator animator;
     [SerializeField] private ParticleSystem dust;
+    [SerializeField] private Ghost ghost;
     
     [SerializeField] private float moveSpeed = 4f;
     [SerializeField] private float jumpSpeed = 10f;
@@ -27,8 +28,6 @@ public class Player : MonoBehaviour
     private float _horizontalInput;
     private float _yRotation;
     private float _prevYRotation;
-
-    private readonly LayerMask _layerMask = 1 << 10;
     
     public enum Layer
     {
@@ -58,6 +57,7 @@ public class Player : MonoBehaviour
         _trail.time = 0f;
         animator.SetBool(JUMPED, false);
         animator.SetBool(DOUBLE_JUMPED, false);
+
     }
 
     private void Update()
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
 
         _prevYRotation = _yRotation;
 
-        Quaternion target = Quaternion.Euler(0, _yRotation, 0);
+        Quaternion target = Quaternion.Euler(playerVisual.rotation.x, _yRotation, playerVisual.rotation.z);
         playerVisual.rotation = Quaternion.Slerp(playerVisual.rotation, target, Time.deltaTime * 10f); 
 
         _rb.velocity = new Vector2(_horizontalInput * moveSpeed, _rb.velocity.y);
@@ -98,9 +98,9 @@ public class Player : MonoBehaviour
                 {
                     dust.Play();
                     animator.SetBool(JUMPED, true);
-                }
-                if(!_isGrounded && !animator.GetBool(DOUBLE_JUMPED))
+                } else
                 {
+                    animator.SetBool(JUMPED, false);
                     animator.SetBool(DOUBLE_JUMPED, true);
                     
                 }
@@ -117,12 +117,13 @@ public class Player : MonoBehaviour
 
         if (!_isGrounded && !_doubleJump)
         {
-            _trail.time = 2f;
+            ghost.makeGhost = true;
         }
         else
         {
-            _trail.time = 0f;
+            ghost.makeGhost = false;
         }
+
 
     }
 
@@ -154,7 +155,7 @@ public class Player : MonoBehaviour
             
             CinemachineShake.Instance.ShakeCamera(1f, .1f);
             dust.Play();
-        }
+        }   
     }
 
     private void OnCollisionExit2D(Collision2D other)
