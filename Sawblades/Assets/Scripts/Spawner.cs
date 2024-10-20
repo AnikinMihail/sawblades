@@ -20,21 +20,21 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             
-            if (Time.time < 6f)
+            if (Time.timeSinceLevelLoad < 6f)
             {
-                minTimeInterval = 4f;
-                maxTimeInterval = 6f;
-            }else if (Time.time < 12f)
+                minTimeInterval = 3f;
+                maxTimeInterval = 5f;
+            }else if (Time.timeSinceLevelLoad < 12f)
             {
-                minTimeInterval = 2f;
-                maxTimeInterval = 4f;
-            }else if (Time.time < 30f)
+                minTimeInterval = 1f;
+                maxTimeInterval = 3f;
+            }else if (Time.timeSinceLevelLoad < 30f)
             {
                 minTimeInterval = 0.5f;
-                maxTimeInterval = 2.5f;
+                maxTimeInterval = 2f;
             }
 
-            int randomRange = Random.Range(-2, 2);
+            float randomRange = Random.value*4f-2f;
             
             Vector2 randomSpawnPosition = new Vector2(randomRange, 6);
 
@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
             if (Random.Range(-3, 10) < 0)
             {
                 
-                randomSpawnPosition = new Vector2(Random.Range(Math.Abs(randomRange)-2, Math.Abs(randomRange)-1), 6);
+                randomSpawnPosition = new Vector2(Random.value * randomRange, 6);
 
                 spawnableInstance = Instantiate(spawnable, randomSpawnPosition, Quaternion.identity);
 

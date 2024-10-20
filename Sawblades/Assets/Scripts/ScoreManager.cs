@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text timeText;
+    [SerializeField] private Image barImage;
 
     private int _score = 0;
     private float _time = 60f;
+    private float _whiteTimer = 0f;
 
     private void Awake()
     {
@@ -35,6 +38,17 @@ public class ScoreManager : MonoBehaviour
         }
 
         timeText.text = ((int)_time).ToString();
+        barImage.fillAmount = _time / 60f;
+
+        if (_whiteTimer > 0f)
+        {
+            barImage.color = Color.white;
+            _whiteTimer-= Time.deltaTime;
+        }
+        else
+        {
+            barImage.color = new Color(250/255f, 132/255f, 0, 1);
+        }
     }
 
     // Update is called once per frame
@@ -45,5 +59,6 @@ public class ScoreManager : MonoBehaviour
     }public void AddTime()
     {
         _time += 1f;
+        _whiteTimer += .1f;
     }
 }
